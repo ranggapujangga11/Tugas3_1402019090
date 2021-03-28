@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>3D Kalkulator Created by Rangga Pujangga</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+
+        <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">3D Kalkulator</a>
+                <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.html">Home</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="silinder.html">Silinder</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="kerucut.html">Kerucut</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="bola.html">Bola</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="index.png" alt="" />
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">Silinder</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                
+                
+             <div id="tabung" class="row-padding">
+              
+              <p>Rumus luas permukaan silinder: 2 x π x r (r + t)<br>Rumus volume silinder: π x r x r x </p>
+              <div class="frame">
+                <div class="form-group">
+                  <input id="masukan_jari1" name="masukan_jari1" required />
+                  <label for="masukan_jari1">Masukan jari-jari silinder(dalam meter)</label>
+                </div>
+                <div class="form-group">
+                  <input id="masukan_tinggi1" name="masukan_tinggi1" required />
+                  <label for="masukan_tinggi1">Masukan tinggi silinder(dalam meter)</label>
+                </div>
+                <button id="hasil1" class="btn btn1" onclick="tabung1()">Hitung!</button>
+                <br><br>
+                <div class="form-group">
+                  <textarea id="result1" type="hidden" ></textarea>
+                  <label>Result Hitungan</label>
+                </div>
+      
+              </div>
+
+                          <script type="text/javascript">
+
+      // menghitung tabung
+  var tabung1 = function () {
+    let jari_jari = document.getElementById('masukan_jari1').value
+    let tinggi = document.getElementById('masukan_tinggi1').value
+    var z = 2 * Math.PI * Math.pow(jari_jari, 2) + 2 * Math.PI * jari_jari * tinggi;
+    var y = Math.PI * Math.pow(jari_jari, 2) * tinggi;
+    if (jari_jari == "" || tinggi == "") {
+        alert("Inputan masih kosong");
+    } else {
+        if (isNaN(jari_jari) || isNaN(tinggi)) {
+            alert("Inputan harus angka");
+            document.getElementById('masukan_jari1').value = '';
+            document.getElementById('masukan_tinggi1').value = '';
+        } else {
+            // display the result
+            document.getElementById('result1').textContent = "Luas permukaan = " + z.toFixed(2) + " m"+"2"  + "\nVolume = " + y.toFixed(2) + " m"+"3";
+        }
+    }
+ }
+ </script>
+        </header>
+       
+        <div class="footer">
+            <footer>
+            <ul>
+                        <li><a href=https://www.instagram.com/ranggapujangga11/?hl=en><img src="instagram.jpg" style="width:40px;height:40px; ">RanggaPujangga11</i></a></li>
+                        <li><a href=https://www.youtube.com/channel/UCpMrOPhlH2ga5HuU9IBJtww><img src="unnamed.jpg" style="width:40px;height:40px; ">Rangga Pujangga</i></a></li>
+                        <li><a href=https://github.com/ranggapujangga11><img src="github.png" style="width:40px;height:40px; ">RanggaPujangga11</i></a></li>
+                    </ul>
+            </footer>
+        </div>
+    </body>
+</html>
